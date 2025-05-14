@@ -1,20 +1,17 @@
- build.gradle (Root Project)
-
-buildscript {
-	ext.kotlin_version = '1.9.24'
+pluginManagement {
 	repositories {
+    	gradlePluginPortal()
     	google()
     	mavenCentral()
 	}
-	dependencies {
-    	classpath "com.android.tools.build:gradle:8.2.0"
-    	classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-	}
 }
-
-allprojects {
+dependencyResolutionManagement {
+	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 	repositories {
     	google()
     	mavenCentral()
 	}
 }
+rootProject.name = "ToDoTask"
+include(":app")
+
